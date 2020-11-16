@@ -1,0 +1,41 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tweet {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+
+.btn {
+  background-color: #4056a1;
+  color: #ffffff;
+  font-family: "Bungee", cursive;
+  border: none;
+  padding: 6px 10px;
+}
+
+textarea {
+  width: 100%;
+  background: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: thick #545149 solid;
+}
+
+textarea[placeholder] {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+output.counter {
+  font-family: "Bungee", cursive;
+  font-weight: bold;
+  font-size: 1.2em;
+}
