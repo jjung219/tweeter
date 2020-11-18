@@ -1,42 +1,5 @@
 $(document).ready(() => {
 
-  const dataArr = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-    "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-    "created_at": 1461116232227
- }
-
   const createTweetElement = (data) => {
     let $tweet = $(`
       <article class="tweet">
@@ -64,12 +27,49 @@ $(document).ready(() => {
     return $tweet;
   }
 
+
   const renderTweets = (tweets) => {
     for (const tweet of tweets) {
-      const $tweet = createTweetElement(tweet)
-      $('#tweets-container').append($tweet);
+      if (typeof tweet === 'object') {
+        const $tweet = createTweetElement(tweet)
+        $('#tweets-container').prepend($tweet);
+      }
+    }
+  }
+  
+  const submitPost = (event, action)=> {
+    event.preventDefault();
+    const tweetVal = $('textarea').val();
+
+    if (tweetVal.length > 140) {
+      alert("Text exceeds 140")
+    } else if (tweetVal === null || tweetVal === '') {
+      alert("Tweet content is empty")
+    } else {
+      $
+      .ajax({
+        url: '/tweets',
+        method: 'POST',
+        data: $('form').serialize()
+      })
+      .then(res => action(res))
     }
   }
 
-  renderTweets(dataArr);
+  const loadTweets = () => {
+    $('#tweets-container').empty();
+    $
+      .ajax({
+        url: '/tweets',
+        method: 'GET'
+      })
+      .then((res) => {
+        renderTweets(res);
+      })
+  }
+  
+  $('form').on('submit', event => {
+    submitPost(event, loadTweets)
+  })
+
 })
