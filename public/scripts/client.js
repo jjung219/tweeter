@@ -37,10 +37,10 @@ $(document).ready(() => {
     "created_at": 1461116232227
  }
   
-  const renderTweets = function () {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
+  const renderTweets = function (tweets) {
+    for (const tweet of tweets) {
+      createTweetElement(tweet)
+    }
   }
 
   const createTweetElement = function (data) {
@@ -49,7 +49,7 @@ $(document).ready(() => {
       <article class="tweet">
       <header>
         <div>
-          <img src=${data.user.avatars}}>
+          <img class="avatar" src=${data.user.avatars}}>
           <p class="username">${data.user.name}</p>
           </div>
         <span class="tweeter-id">${data.user.handle}</span>
