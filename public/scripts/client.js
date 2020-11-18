@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-  const data = [
+  const dataArr = [
     {
       "user": {
         "name": "Newton",
@@ -36,15 +36,8 @@ $(document).ready(() => {
       },
     "created_at": 1461116232227
  }
-  
-  const renderTweets = function (tweets) {
-    for (const tweet of tweets) {
-      createTweetElement(tweet)
-    }
-  }
 
-  const createTweetElement = function (data) {
-    //return a tweet <article> element containing the entire HTML structure of the tweet
+  const createTweetElement = (data) => {
     let $tweet = $(`
       <article class="tweet">
       <header>
@@ -68,14 +61,15 @@ $(document).ready(() => {
     </article>
     `);
   
-
     return $tweet;
   }
 
-  const $tweet = createTweetElement(tweetData);
-  
-  
-  console.log($tweet); // to see what it looks like
-  $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  const renderTweets = (tweets) => {
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet)
+      $('#tweets-container').append($tweet);
+    }
+  }
 
+  renderTweets(dataArr);
 })
