@@ -77,6 +77,7 @@ $(document).ready(() => {
     .then((res) => {
       $('#tweets-container').empty();
       $('#tweet-text').val('');
+      $('.counter').val(140);
       renderTweets(res);
     })
   }
@@ -91,9 +92,9 @@ $(document).ready(() => {
     submitPost(event, loadTweets);
   })
 
-  $('body').on('click', e => {
-    console.log(e.target)
-  })
+  // $('body').on('click', e => {
+  //   console.log(e.target)
+  // })
 
   $('#new-tweet-btn').on('click', () => {
     if ($('button').attr('class') === 'not-clicked') {
