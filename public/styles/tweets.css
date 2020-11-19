@@ -45,7 +45,7 @@ header .tweeter-id {
   color: #f4f1ec;
 }
 
-div.tweet-content {
+.tweet-content {
   border-bottom: #545149 solid;
   height: 45%;
   width: 97%;
@@ -54,6 +54,7 @@ div.tweet-content {
 .tweet-content p {
   margin: 40px 20px;
   font-weight: bold;
+  object-fit: ;
 }
 
 article footer {

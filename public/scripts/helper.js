@@ -79,13 +79,14 @@ const loadTweets = renderMethod => {
 }
 
 const expandTextareaBtn = () => {
-  if ($('button').attr('class') === 'not-clicked') {
+  if ($('button').attr('class') === 'hidden') {
     $('.new-tweet').slideDown();
-    $('button').addClass('clicked');
-    $('button').removeClass('not-clicked');
+    $('button').addClass('shown');
+    $('button').removeClass('hidden');
+    $('textarea').focus();
   } else {
     $('.new-tweet').slideUp();
-    $('button').addClass('not-clicked');
-    $('button').removeClass('clicked');
+    $('button').addClass('hidden');
+    $('button').removeClass('shown');
   }
 }

@@ -11,6 +11,10 @@ header {
   flex-direction: column;
   justify-self: center;
   align-items: center;
-  background-color: #e8eef1;
+  background-color: #ff6a7a;
   background-image: url("../images/asfalt-light.png");
+}
+
+header h2 {
+  text-align: center;
 }

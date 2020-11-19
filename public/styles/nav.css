@@ -1,7 +1,7 @@
 nav {
   height: 120px;
   width: 100vw;
-  background-color: #4056a1;
+  background-color: #ff6a7a;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,7 @@ nav {
   
 */
 nav button {
-  background-color: #4056a1;
+  background-color: #ff6a7a;
   color: #ffffff;
   border: none;
 }

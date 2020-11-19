@@ -1,0 +1,88 @@
+/* Tablet: minimum width of 768px to maximum width of 1024px */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Write Tablet only CSS here */
+}
+
+/* Another tablet breakpoint is maximum width of 1024px */
+@media only screen and (max-width: 1024px) {
+  /* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
+}
+
+/* Another tablet breakpoint is minimum width of 768px */
+@media only screen and (min-width: 768px) {
+  /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media only screen and (min-width: 1024px) {
+  /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
+  body {
+    font-size: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  nav {
+    background-color: #4056a1;
+  }
+
+  nav button {
+    background-color: #4056a1;
+  }
+
+  header {
+    width: 45vw;
+    height: 100%;
+    background-color: #f4f1ec;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .profile-container {
+    width: 30vw;
+    height: auto;
+    background-color: #ff6a7a;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 2rem 0 2rem;
+    padding: 1rem 4rem 0 4rem;
+  }
+
+  .img-container img {
+    height: 100%;
+    width: 100%;
+  }
+
+  header h2 {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Tweet section */
+  .container {
+    height: 100%;
+    width: 55vw;
+    background-color: #f4f1ec;
+    margin-right: 4rem;
+  }
+
+  main p {
+    font-size: 20px;
+  }
+
+  .new-tweet {
+    margin-top: 4rem;
+  }
+}
+
+/* Laptops / Desktops: minimum width of 960px */
+@media only screen and (min-width: 960px) {
+  /* Write CSS rules that target small laptop screen sizes and beyond */
+}
