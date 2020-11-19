@@ -2,7 +2,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  margin: 2em;
 }
 
 .tweet {
@@ -27,11 +27,7 @@ textarea {
   border-right: none;
   border-left: none;
   border-bottom: thick #545149 solid;
-}
-
-textarea[placeholder] {
-  font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 output.counter {

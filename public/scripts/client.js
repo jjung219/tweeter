@@ -1,5 +1,11 @@
 $(document).ready(() => {
 
+  const escape =  str => {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   const createTweetElement = (data) => {
     let $tweet = $(`
       <article class="tweet">
@@ -11,7 +17,7 @@ $(document).ready(() => {
         <span class="tweeter-id">${data.user.handle}</span>
       </header>
       <div class="tweet-content">
-        <p>${data.content.text}</p>
+        <p>${escape(data.content.text)}</p>
       </div>
       <footer>
         <p>${moment(data.created_at).fromNow()}</p>
@@ -40,12 +46,18 @@ $(document).ready(() => {
   const submitPost = (event, action)=> {
     event.preventDefault();
     const tweetVal = $('textarea').val();
+    let errorMsg;
+    let $error;
 
     if (tweetVal.length > 140) {
-      alert("Text exceeds 140")
+      $('.empty-tweet').slideUp();
+      $('.long-tweet').slideDown();
     } else if (tweetVal === null || tweetVal === '') {
-      alert("Tweet content is empty")
+      $('.long-tweet').slideUp();
+      $('.empty-tweet').slideDown();
     } else {
+      $('.long-tweet').slideUp();
+      $('.empty-tweet').slideUp();
       $
       .ajax({
         url: '/tweets',
@@ -57,7 +69,6 @@ $(document).ready(() => {
   }
 
   const loadTweets = () => {
-    $('#tweet-text').val('');
     $
     .ajax({
       url: '/tweets',
@@ -65,6 +76,7 @@ $(document).ready(() => {
     })
     .then((res) => {
       $('#tweets-container').empty();
+      $('#tweet-text').val('');
       renderTweets(res);
     })
   }

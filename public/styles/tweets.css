@@ -33,7 +33,6 @@ article header div {
   align-items: center;
 }
 
-
 header div .username {
   margin-left: 10px;
 }
@@ -65,7 +64,7 @@ article footer {
   width: 92%;
 }
 
-.logos i{
+.logos i {
   margin: 1em 0.3em;
 }
 
@@ -76,4 +75,11 @@ article:hover {
 
 article:hover .tweeter-id {
   color: #b1b1b1;
+}
+
+.empty-tweet,
+.long-tweet {
+  color: red;
+  border: red solid;
+  padding: 0.5em;
 }
