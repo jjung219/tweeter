@@ -64,17 +64,17 @@ const submitPost = (event, loadTweetMethod)=> {
   }
 }
 
-const loadTweets = (data, renderMethod) => {
+const loadTweets = renderMethod => {
   $
   .ajax({
     url: '/tweets',
     method: 'GET'
   })
-  .then((data) => {
+  .then((res) => {
     $('#tweets-container').empty();
     $('#tweet-text').val('');
     $('.counter').val(140);
-    renderMethod(data);
+    renderMethod(res);
   })
 }
 
