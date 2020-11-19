@@ -57,17 +57,19 @@ $(document).ready(() => {
   }
 
   const loadTweets = () => {
-    $('#tweets-container').empty();
+    $('#tweet-text').val('');
     $
-      .ajax({
-        url: '/tweets',
-        method: 'GET'
-      })
-      .then((res) => {
-        renderTweets(res);
-      })
+    .ajax({
+      url: '/tweets',
+      method: 'GET'
+    })
+    .then((res) => {
+      $('#tweets-container').empty();
+      renderTweets(res);
+    })
   }
   
+
   $('form').on('submit', event => {
     submitPost(event, loadTweets)
   })
