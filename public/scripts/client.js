@@ -1,13 +1,15 @@
 $(document).ready(() => {
-  const renderAndCreateTweetsHTML = tweets => renderTweets(tweets, createTweetElement); 
+  const renderAndCreateTweetsHTML = tweets => renderTweets(tweets, createTweetElement);
   const loadAndCreateHTML = () => loadTweets(renderAndCreateTweetsHTML);
-  loadAndCreateHTML()
+  //Load the existing tweets when the app loads
+  loadAndCreateHTML();
 
   $('form').on('submit', event => {
     submitPost(event, loadAndCreateHTML);
-  })
+  });
 
-  $('#new-tweet-btn').on('click', () => {
+  $('#compose').on('click', () => {
     expandTextareaBtn();
-  })
-})
+  });
+
+});

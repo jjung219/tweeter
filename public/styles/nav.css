@@ -11,14 +11,11 @@ nav {
   top: 0;
 }
 
-.title {
+nav .title {
   font-family: "Bungee", cursive;
   font-size: 40px;
 }
 
-/* hover: pointer changes, color changes
-  
-*/
 nav button {
   background-color: #ff6a7a;
   color: #ffffff;

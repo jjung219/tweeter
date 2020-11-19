@@ -1,4 +1,4 @@
-#scroll {
+#scroll-button {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -12,12 +12,12 @@
   border-radius: 2em;
 }
 
-#scroll a {
+#scroll-button a {
   text-decoration: none;
   color: #ffffff;
 }
 
-#scroll i {
+#scroll-button i {
   width: 100%;
   height: 100%;
 }

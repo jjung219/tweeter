@@ -46,7 +46,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <div class="title">tweeter</div>
-      <div id="new-tweet-btn">
+      <div id="compose">
         <button class="hidden" type="button"><strong>Write</strong> a new tweet</button>
       </div>
     </nav>
@@ -72,6 +72,7 @@
       <div class="long-tweet" style="display: none;">
         ⚠️ The character length exceeds 140 ⚠️
       </div>
+      <!-- Compose a new tweet textarea here -->
       <section class="new-tweet" style="display: none;">
         <form method="POST" action="/tweets">
           <p>What are you humming about?</p>
@@ -83,9 +84,9 @@
         </form>
       </section>
       <section class="tweet-container" id="tweets-container">
-        <!-- new and exisitng tweets go here -->
+        <!-- New and exisitng tweets go here -->
       </section>
-      <div id="scroll" style="display: none;">
+      <div id="scroll-button">
         <a href="#header"><i class="fas fa-angle-double-up fa-2x"></i></a>
       </div>
     </main>

@@ -1,8 +1,9 @@
+// stops users from changing the app structure/values
 const escape =  str => {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 const createTweetElement = (tweet) => {
   let $tweet = $(`
@@ -29,8 +30,7 @@ const createTweetElement = (tweet) => {
   `);
 
   return $tweet;
-}
-
+};
 
 const renderTweets = (tweets, creationMethod) => {
   for (const tweet of tweets) {
@@ -39,30 +39,7 @@ const renderTweets = (tweets, creationMethod) => {
       $('#tweets-container').prepend($tweet);
     }
   }
-}
-
-const submitPost = (event, loadTweetMethod)=> {
-  event.preventDefault();
-  const tweetVal = $('textarea').val();
-
-  if (tweetVal.length > 140) {
-    $('.empty-tweet').slideUp();
-    $('.long-tweet').slideDown();
-  } else if (tweetVal === null || tweetVal === '') {
-    $('.long-tweet').slideUp();
-    $('.empty-tweet').slideDown();
-  } else {
-    $('.long-tweet').slideUp();
-    $('.empty-tweet').slideUp();
-    $
-    .ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: $('form').serialize()
-    })
-    .then(res => loadTweetMethod(res))
-  }
-}
+};
 
 const loadTweets = renderMethod => {
   $
@@ -75,9 +52,35 @@ const loadTweets = renderMethod => {
     $('#tweet-text').val('');
     $('.counter').val(140);
     renderMethod(res);
-  })
-}
+  });
+};
 
+const submitPost = (event, loadTweetMethod)=> {
+  event.preventDefault();
+  const tweetVal = $('textarea').val();
+
+  //validating tweet value
+  if (tweetVal.length > 140) {
+    $('.empty-tweet').slideUp();
+    $('.long-tweet').slideDown();
+  } else if (tweetVal === null || tweetVal === '') {
+    $('.long-tweet').slideUp();
+    $('.empty-tweet').slideDown();
+  } else {
+    $('.long-tweet').slideUp();
+    $('.empty-tweet').slideUp();
+
+  $
+  .ajax({
+    url: '/tweets',
+    method: 'POST',
+    data: $('form').serialize()
+  })
+  .then(res => loadTweetMethod(res));
+  }
+};
+
+//Expand or Hide Compose a new tweet textarea
 const expandTextareaBtn = () => {
   if ($('button').attr('class') === 'hidden') {
     $('.new-tweet').slideDown();
@@ -89,4 +92,4 @@ const expandTextareaBtn = () => {
     $('button').addClass('hidden');
     $('button').removeClass('shown');
   }
-}
+};
