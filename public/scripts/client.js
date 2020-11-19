@@ -81,9 +81,31 @@ $(document).ready(() => {
     })
   }
   
+  // const showTweetTextArea = () => {
+  //   $('#new-tweet-btn').on('click', event => {
+  //     $('.new-tweet').slideDown();
+  //   })
+  // }
 
   $('form').on('submit', event => {
-    submitPost(event, loadTweets)
+    submitPost(event, loadTweets);
+  })
+
+  $('body').on('click', e => {
+    console.log(e.target)
+  })
+
+  $('#new-tweet-btn').on('click', () => {
+    if ($('button').attr('class') === 'not-clicked') {
+      $('.new-tweet').slideDown();
+      $('button').addClass('clicked');
+      $('button').removeClass('not-clicked');
+    } else {
+      $('.new-tweet').slideUp();
+      $('button').addClass('not-clicked');
+      $('button').removeClass('clicked');
+
+    }
   })
 
 })

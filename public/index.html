@@ -38,8 +38,10 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span class="title">tweeter</span>
-      <span><strong>Write</strong> a new tweet</span>
+      <div class="title">tweeter</div>
+      <div id="new-tweet-btn">
+        <button class="not-clicked" type="button"><strong>Write</strong> a new tweet</button>
+      </div>
     </nav>
 
     <!-- Header -->
@@ -61,7 +63,7 @@
       <div class="long-tweet" style="display: none;">
         ⚠️ The character length exceeds 140 ⚠️
       </div>
-      <section class="new-tweet">
+      <section class="new-tweet" style="display: none;">
         <form method="POST" action="/tweets">
           <p>What are you humming about?</p>
           <textarea name="text" id="tweet-text"></textarea>

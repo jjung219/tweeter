@@ -15,3 +15,21 @@ nav {
   font-family: "Bungee", cursive;
   font-size: 40px;
 }
+
+/* hover: pointer changes, color changes
+  
+*/
+nav button {
+  background-color: #4056a1;
+  color: #ffffff;
+  border: none;
+}
+
+nav button:hover {
+  cursor: pointer;
+  background: #ffffff;
+  color: #4056a1;
+  border-radius: 0.2em;
+  opacity: 0.9;
+  padding: 0.2em;
+}
