@@ -49,12 +49,16 @@ header .tweeter-id {
   border-bottom: #545149 solid;
   height: 45%;
   width: 97%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .tweet-content p {
   margin: 40px 20px;
   font-weight: bold;
-  object-fit: ;
+  height: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 article footer {

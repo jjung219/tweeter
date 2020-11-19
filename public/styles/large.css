@@ -1,21 +1,4 @@
-/* Tablet: minimum width of 768px to maximum width of 1024px */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  /* Write Tablet only CSS here */
-}
-
-/* Another tablet breakpoint is maximum width of 1024px */
-@media only screen and (max-width: 1024px) {
-  /* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
-}
-
-/* Another tablet breakpoint is minimum width of 768px */
-@media only screen and (min-width: 768px) {
-  /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
-}
-
-/* Laptops / Desktops: minimum width of 1024px */
 @media only screen and (min-width: 1024px) {
-  /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
   body {
     font-size: 20px;
     margin: 0 auto;
@@ -80,9 +63,4 @@
   .new-tweet {
     margin-top: 4rem;
   }
-}
-
-/* Laptops / Desktops: minimum width of 960px */
-@media only screen and (min-width: 960px) {
-  /* Write CSS rules that target small laptop screen sizes and beyond */
 }

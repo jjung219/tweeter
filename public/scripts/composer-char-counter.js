@@ -1,3 +1,4 @@
+// counts the characters in the textarea and replaces the text with the remainign characters left to type
 $(document).ready(() => {
   
   $('#tweet-text').on('input', function() {
