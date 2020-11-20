@@ -6,11 +6,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of the app on mobile"]()
-!["Screenshot of the app on tablet"]()
-!["Screenshot of the app on tablet"]()
-!["Screenshot of the app on laptop"]()
-!["Screenshot of the newly created tweet"]()
+!["Screenshot of the app on mobile"](https://github.com/jjung219/tweeter/blob/master/docs/mobile-size.png)
+!["Screenshot of the app on tablet"](https://github.com/jjung219/tweeter/blob/master/docs/ipad-size.png)
+!["Screenshot of the app on tablet"](https://github.com/jjung219/tweeter/blob/master/docs/ipad-size2.png)
+!["Screenshot of the app on laptop"](https://github.com/jjung219/tweeter/blob/master/docs/laptop-size.png)
+!["Screenshot of the newly created tweet"](https://github.com/jjung219/tweeter/blob/master/docs/laptop_new_tweet.png)
 
 ## Getting Started
 
